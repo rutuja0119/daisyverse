@@ -5,7 +5,7 @@ const ADMIN_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5OW
 
 const options = {
   hostname: 'localhost',
-  port: 5000,
+  port: 3000,
   path: '/api/admin/products',
   method: 'GET',
   headers: {

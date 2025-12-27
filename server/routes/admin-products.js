@@ -110,7 +110,8 @@ router.post('/products', authenticateAdminToken, upload.array('images', 10), asy
     }
     
     // Set default values
-    productData.availability = productData.stock > 0 ? 'in_stock' : 'out_of_stock';
+    // Note: Removed automatic availability override for consistency with PUT endpoint
+    // The availability field should be set by the user, not automatically based on stock
     productData.isActive = productData.isActive !== false;
     
     const product = new Product(productData);
@@ -150,10 +151,8 @@ router.put('/products/:id', authenticateAdminToken, upload.array('images', 10), 
       }
     }
     
-    // Update availability based on stock
-    if (productData.stock !== undefined) {
-      productData.availability = productData.stock > 0 ? 'in_stock' : 'out_of_stock';
-    }
+    // Note: Removed automatic availability override to allow manual control
+    // The availability field should be set by the user, not automatically based on stock
     
     const product = await Product.findByIdAndUpdate(
       req.params.id,

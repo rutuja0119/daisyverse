@@ -25,7 +25,7 @@ form.append('productData', JSON.stringify(productData));
 
 const options = {
   hostname: 'localhost',
-  port: 5000,
+  port: 3000,
   path: '/api/admin/products',
   method: 'POST',
   headers: form.getHeaders()

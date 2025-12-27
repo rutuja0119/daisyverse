@@ -10,7 +10,7 @@ const loginData = JSON.stringify({
 
 const loginOptions = {
   hostname: 'localhost',
-  port: 5000,
+  port: 3000,
   path: '/api/admin/login',
   method: 'POST',
   headers: {
@@ -94,7 +94,7 @@ function testProductCreation(token) {
   
   const options = {
     hostname: 'localhost',
-    port: 5000,
+    port: 3000,
     path: '/api/admin/products',
     method: 'POST',
     headers: {

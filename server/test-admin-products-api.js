@@ -6,7 +6,7 @@ const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5OWJkODQ2
 async function testAdminProductsEndpoint() {
   try {
     console.log('Testing GET /api/admin/products...');
-    const response = await axios.get('http://localhost:5000/api/admin/products', {
+    const response = await axios.get('http://localhost:3000/api/admin/products', {
       headers: {
         'Authorization': `Bearer ${token}`
       }

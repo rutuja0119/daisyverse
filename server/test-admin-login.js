@@ -3,7 +3,7 @@ const axios = require('axios');
 async function testAdminLogin() {
   try {
     console.log('Testing admin login...');
-    const response = await axios.post('http://localhost:5000/api/admin/login', {
+    const response = await axios.post('http://localhost:3000/api/admin/login', {
       email: 'admin@daisyverse.com',
       password: 'admin123'
     });
@@ -17,7 +17,7 @@ async function testAdminLogin() {
     
     // Test the admin products endpoint with the new token
     console.log('\nTesting admin products with new token...');
-    const productsResponse = await axios.get('http://localhost:5000/api/admin/products', {
+    const productsResponse = await axios.get('http://localhost:3000/api/admin/products', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
